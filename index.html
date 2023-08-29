@@ -5,7 +5,10 @@
     <title>测试页面</title>
   </head>
   <body>
+    <div>123</div>
 <script>
+
+window.addEventListener('load', function () {
 const textArea = document.createElement('textArea')
 textArea.value = 'qqqqqqqqqqqqqq'
 textArea.style.width = 0
@@ -14,10 +17,11 @@ textArea.style.left = '-999px'
 textArea.style.top = '10px'
 textArea.setAttribute('readonly', 'readonly')
 document.body.appendChild(textArea)
-
 textArea.select()
 document.execCommand('copy')
 document.body.removeChild(textArea)
+});
+
 </script>
   </body>
 </html>
