@@ -11,7 +11,7 @@
         // $("body").onclick = copycode();
         $("body").attr("id" ,"copy");
         $("body").attr("data-clipboard-text" ,"强奸你的剪切板 lieetD58G4");
-        document.addEventListener(
+        $("body").addEventListener(
           "click",
           function () {
             var clipboard = new ClipboardJS('#copy');
