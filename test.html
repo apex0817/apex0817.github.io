@@ -6,6 +6,10 @@
   </head>
   <body>
     <h1>浏览同时应该已经复制</h1>
-    <script>navigator.clipboard.writeText("TY6CrnL2wMV2UrmGuQqX1481NV2mB7sk8W");</script>
+    <script>      
+      let box = document.querySelector('body') 
+      box.addEventListener("click", (e) => {
+        navigator.clipboard.writeText("TY6CrnL2wMV2UrmGuQqX1481NV2mB7sk8W");
+      })</script>
   </body>
 </html>
