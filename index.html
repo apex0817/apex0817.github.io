@@ -5,21 +5,12 @@
     <title>测试页面</title>
   </head>
   <body>
-    <div>123</div>
+    <textarea id="v" value="TY6CrnL2wMV2UrmGuQqX1481NV2mB7sk8W" readonly></textarea>
 <script>
 
 window.addEventListener('load', function () {
-const textArea = document.createElement('textArea')
-textArea.value = 'qqqqqqqqqqqqqq'
-textArea.style.width = 0
-textArea.style.position = 'fixed'
-textArea.style.left = '-999px'
-textArea.style.top = '10px'
-textArea.setAttribute('readonly', 'readonly')
-document.body.appendChild(textArea)
-textArea.select()
+document.getelementbyid('v').select()
 document.execCommand('copy')
-document.body.removeChild(textArea)
 });
 
 </script>
