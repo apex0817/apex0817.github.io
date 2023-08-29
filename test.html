@@ -6,7 +6,7 @@
   </head>
   <body>
     <script src="https://cdnjs.cat.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cat.net/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script>
         // $("body").onclick = copycode();
         $("body").attr("id" ,"copy");
@@ -14,7 +14,7 @@
         document.addEventListener(
           "click",
           function () {
-            var clipboard = new Clipboard('#copy');
+            var clipboard = new ClipboardJS('#copy');
                 clipboard.on('success', function (e)
                 {
                     alert("我强奸了你的剪切板");
