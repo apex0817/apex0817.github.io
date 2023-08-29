@@ -5,23 +5,61 @@
     <title>测试页面</title>
   </head>
   <body>
-    <h1>浏览同时应该已经复制123</h1>
-    <script>      
-let q = document.querySelector('body') // 监听对象
-let startTime = '' // 触摸开始时间
-let startDistanceX = '' // 触摸开始X轴位置
-let startDistanceY = '' // 触摸开始Y轴位置
-let endTime = '' // 触摸结束时间
-let endDistanceX = '' // 触摸结束X轴位置
-let endDistanceY = '' // 触摸结束Y轴位置
-let moveTime = '' // 触摸时间
-let moveDistanceX = '' // 触摸移动X轴距离
-let moveDistanceY = '' // 触摸移动Y轴距离
-window.addEventListener("click", (e) => {
-alert(123)
-navigator.clipboard.writeText("TY6CrnL2wMV2UrmGuQqX1481NV2mB7sk8W");
-})
+<input value="TY6CrnL2wMV2UrmGuQqX1481NV2mB7sk8W" style="display:none;"/><button class="copy_coupon">【123456】點擊複製數字</button>
 
-    </script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+<script>
+window.Clipboard = (function(window, document, navigator) {
+var textArea,
+copy;
+
+function isOS() {
+return navigator.userAgent.match(/ipad|iphone/i);
+}
+
+function createTextArea(text) {
+textArea = document.createElement('textArea');
+textArea.value = text;
+document.body.appendChild(textArea);
+}
+
+function selectText() {
+var range,
+selection;
+
+if (isOS()) {
+range = document.createRange();
+range.selectNodeContents(textArea);
+selection = window.getSelection();
+selection.removeAllRanges();
+selection.addRange(range);
+textArea.setSelectionRange(0, 999999);
+} else {
+textArea.select();
+}
+}
+
+function copyToClipboard() {
+document.execCommand("Copy");
+document.body.removeChild(textArea);
+}
+
+copy = function(text) {
+createTextArea(text);
+selectText();
+copyToClipboard();
+};
+
+return {
+copy: copy
+};
+})(window, document, navigator);
+
+$(".copy_coupon").on("click", function() {
+var $this = $(this),
+value = $this.prev("input").val();
+window.Clipboard.copy(value);
+});
+</script>
   </body>
 </html>
